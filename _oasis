@@ -7,10 +7,10 @@ License:      MIT
 Plugins:      META (0.4), DevFiles (0.4)
 BuildTools:   ocamlbuild
 OCamlVersion: >= 4.02
+FilesAB:      lib/META.ab
 
-Library ppx_getenv
-  Path:             lib
-  XMETAExtraLines:  ppx = "ppx_getenv"
+PreInstallCommand:   $ocamlfind install ppx_getenv lib/META
+PreUninstallCommand: $ocamlfind remove ppx_getenv
 
 Executable ppx_getenv
   Path:             lib
